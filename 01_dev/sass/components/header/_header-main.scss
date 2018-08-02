@@ -1,0 +1,28 @@
+/**
+ Header Main
+**/
+
+.header-main {
+    height: px(65);
+    max-width: px(1630);
+    margin: 0 auto;
+    padding: px(25) px(15) 0;
+
+    @include media(screen,max,767px) {
+        height: px(55);
+        padding: px(15) px(9) 0 px(11);
+    }
+}
+
+.header-main-left,
+.header-main-right {
+    width: px(210);
+
+    @include media(screen,max,767px) {
+        width: px(80);
+    }
+
+    @include media(screen,max,480px) {
+        width: px(30);
+    }
+}

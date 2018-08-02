@@ -1,0 +1,136 @@
+/**
+ Buttons
+**/
+
+.btn {
+    // Variable for root id: #{$btnParent}
+    $btnParent: &;
+
+    // Default styling
+    position: relative;
+    display: inline-block;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-family: $font-2;
+    font-weight: normal;
+    font-size: px(12);
+    line-height: px(16);
+    letter-spacing: px(0.25);
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+
+    &:focus {
+        outline: px(1) dotted $colorGreyDark;
+    }
+
+    //-------------------------------
+    // Start Element
+    @at-root #{&}__icon {
+        position: absolute;
+        display: block;
+        width: px(20);
+        height: px(20);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    @at-root #{&}__burger-icon {
+        position: absolute;
+        display: block;
+        text-indent: -99999px;
+        width: px(22);
+        height: px(22);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            background-color: $colorBlack;
+            content: '';
+            width: 100%;
+            height: px(2);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto 0;
+        }
+    }
+
+    //-------------------------------
+    // Start Modifier
+    @at-root #{&}--header-icon {
+        position: relative;
+        display: block;
+        width: px(30);
+        height: px(20);
+
+        @include media(screen,max,767px) {
+            height: px(30);
+        }
+
+        .icon--svg {
+            width: px(20);
+        }
+
+        .icon--height {
+            height: px(20);
+        }
+    }
+
+    @at-root #{&}--burger {
+        display: block;
+        width: px(30);
+        height: px(30);
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            background-color: $colorBlack;
+            content: '';
+            width: px(22);
+            height: px(2);
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+
+        &:before {
+            top: px(7);
+        }
+
+        &:after {
+            bottom: px(7);
+        }
+    }
+
+    @at-root #{&}--burger-active {
+
+        &:before,
+        &:after {
+            opacity: 0;
+        }
+
+        #{$btnParent}__burger-icon {
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

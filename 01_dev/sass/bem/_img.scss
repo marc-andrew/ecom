@@ -1,0 +1,29 @@
+/**
+ Images
+**/
+
+.img {
+    $imgParent: &;
+
+    //-------------------------------
+    // Start Element
+    @at-root #{&}__link {
+        display: block;
+        width: 100%;
+        line-height: 0;
+
+        img {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: px(1) dotted $colorGrey;
+        }
+    }
+
+    //-------------------------------
+    // Start Modifier
+    @at-root #{&}--wrapper {
+        width: 100%;
+    }
+}

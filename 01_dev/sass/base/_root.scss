@@ -1,0 +1,19 @@
+/**
+ Base Root styles
+**/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: $font-1;
+    font-size: 62.5%;
+    letter-spacing: px(0.25);
+	color: $colorBlack;
+	height: 100%;
+}

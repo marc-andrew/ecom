@@ -1,0 +1,57 @@
+/**
+ Buttons
+**/
+
+.cta {
+    // Variable for root id: #{$btnParent}
+    $btnParent: &;
+    
+    // Default styling
+    position: relative;
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    border-bottom: px(1) solid transparent;
+    outline: none;
+    background: none;
+    font-family: $font-1;
+    font-size: px(13);
+    line-height: px(16);
+    letter-spacing: px(0.25);
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        border-color: $colorBlack;
+    }
+
+    &:focus {
+        outline: px(1) dotted $colorGreyDark;
+    }
+
+    //-------------------------------
+    // Start Modifier
+    @at-root #{&}--small {
+        font-size: px(11);
+        line-height: px(16);
+    }
+
+    @at-root #{&}--caps {
+        text-transform: uppercase;
+    }
+
+    @at-root #{&}--bold {
+        font-weight: 600;
+    }
+
+    @at-root #{&}--white {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            border-color: #fff;
+        }
+    }
+}

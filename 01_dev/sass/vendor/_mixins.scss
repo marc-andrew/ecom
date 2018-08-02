@@ -1,0 +1,267 @@
+// Style description: SASS Mixins
+// Style author: Marc San Buenaventra
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Media Queries
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin media($media, $feature, $breakinpoint, $breakinpoint-2: 0) {
+	@if $media == false {
+		@if $feature == max {
+			@media (max-width: $breakinpoint) { @content; }
+		}
+		@else if $feature == min {
+			@media (min-width: $breakinpoint) { @content; }
+		}
+		@else if $feature == min-max {
+			@media (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
+		}
+		@else {
+			@content;
+		}
+	} 
+	@else {
+		@if $feature == max {
+			@media #{$media} and (max-width: $breakinpoint) { @content; }
+		}
+		@else if $feature == min {
+			@media #{$media} and (min-width: $breakinpoint) { @content; }
+		}
+		@else if $feature == min-max {
+			@media #{$media} and (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
+		}
+		@else {
+			@content;
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Pixel Ratio, Retina/HD Images.
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin ratio($breakinpoint: 0, $breakinpoint-2: 0) {
+	@if not $breakinpoint == 0 and $breakinpoint-2 == 0 {
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
+			   only screen and (   -moz-min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
+			   only screen and (     -o-min-device-pixel-ratio: 3/2) and (max-width: $breakinpoint-2),
+			   only screen and (        min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
+			   only screen and (                min-resolution: 144dpi) and (min-width: $breakinpoint-2) { @content; }
+	}
+	@else if not $breakinpoint == 0 and not $breakinpoint-2 == 0 {
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
+			   only screen and (   -moz-min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
+			   only screen and (     -o-min-device-pixel-ratio: 3/2) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
+			   only screen and (        min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
+			   only screen and (                min-resolution: 144dpi) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
+	}
+	@else {
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+			   only screen and (   -moz-min-device-pixel-ratio: 1.5),
+			   only screen and (     -o-min-device-pixel-ratio: 3/2),
+			   only screen and (        min-device-pixel-ratio: 1.5),
+			   only screen and (                min-resolution: 144dpi) { @content; }
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Text Overflow
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// CSS Transform
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin transform($transform...) {
+	-moz-transform:		$transform;
+	-o-transform:		$transform;
+	-webkit-transform:	$transform;
+	transform:			$transform;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// CSS Transition
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin transition($transition...) {
+	-moz-transition:	$transition;
+	-o-transition:		$transition;
+	-webkit-transition: $transition;
+	transition:			$transition;
+}
+
+@mixin transition-property($property...) {
+	-moz-transition-property:	 $property;
+	-o-transition-property:		 $property;
+	-webkit-transition-property: $property;
+	transition-property:		 $property;
+}
+@mixin transition-duration($duration...) {
+	-moz-transition-property:	 $duration;
+	-o-transition-property:		 $duration;
+	-webkit-transition-property: $duration;
+	transition-property:		 $duration;
+}
+@mixin transition-timing-function($timing...) {
+	-moz-transition-timing-function:	$timing;
+	-o-transition-timing-function:		$timing;
+	-webkit-transition-timing-function: $timing;
+	transition-timing-function:			$timing;
+}
+@mixin transition-delay($delay...) {
+	-moz-transition-delay:	  $delay;
+	-o-transition-delay:	  $delay;
+	-webkit-transition-delay: $delay;
+	transition-delay:		  $delay;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// CSS Animation
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($animation) {
+	-webkit-animation: #{$animation};
+	-moz-animation:	   #{$animation};
+	-ms-animation:	   #{$animation};
+	-o-animation:	   #{$animation};
+	animation:		   #{$animation};
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Background SVG with PNG Fallback and Retina support
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin retina-image($name, $file:svg){
+	@if $file == svg {
+		background-image: url(#{$img-path}/#{$name}.#{$fallback-extension});
+		background-image: url(#{$img-path}/#{$name}.svg);
+	}
+	@else {
+		background-image: url(#{$img-path}/#{$name}.#{$file});
+
+		@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+			background-image: url(#{$img-path}/#{$name}#{$retina-suffix}.#{$file});
+			background-size: 100% 100%;
+		}
+	}
+}
+
+@mixin icon($name, $file:svg){
+	@if $file == svg {
+		background-image: url(#{$icon-path}/#{$name}.#{$fallback-extension});
+		background-image: url(#{$icon-path}/#{$name}.svg);
+	}
+	@else {
+		background-image: url(#{$icon-path}/#{$name}.#{$file});
+
+		@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+			background-image: url(#{$icon-path}/#{$name}#{$retina-suffix}.#{$file});
+			background-size: 100% 100%;
+		}
+	}
+}
+
+@mixin background-image($name, $file:png){
+	background-image: url(#{$img-path}/#{$name}.#{$file});
+}
+
+@mixin background($name, $file:svg, $color:false, $position:false, $repeat:false, $size:false){
+	@if $file == svg {
+		background-image: url(#{$img-path}/#{$name}.#{$fallback-extension});
+		background-image: url(#{$img-path}/#{$name}.svg);
+		@if($color){
+			background-color: $color;
+		}
+		@if($position){
+			background-position: $position;
+		}
+		@if($repeat){
+			background-repeat: $repeat;
+		}
+		@if($size){
+			background-size: $size;
+		}
+	}
+	@else {
+		background-image: url(#{$img-path}/#{$name}.#{$file});
+		@if($color){
+			background-color: $color;
+		}
+		@if($position){
+			background-position: $position;
+		}
+		@if($repeat){
+			background-repeat: $repeat;
+		}
+		@if($size){
+			background-size: $size;
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// CSS Re-Ordering
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin reoder($number) {
+	-webkit-box-ordinal-group: $number;
+	-moz-box-ordinal-group: $number;
+	box-ordinal-group: $number;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Clearfix
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin cf() {
+	&::before,
+	&::after {
+		content	: "";
+		display	: block;
+	}
+	&::after {
+		clear	: both;
+	}
+}
+
+@mixin cfbefore() {
+	&::before {
+		content	: "";
+		display	: block;
+		clear	: both;
+	}
+}
+
+@mixin cfafter() {
+	&::after {
+		content	: "";
+		display	: block;
+		clear	: both;
+	}
+}
+
+

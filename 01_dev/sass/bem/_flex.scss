@@ -1,0 +1,20 @@
+/**
+ Flex
+**/
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    @at-root #{&}--justify-center {
+        justify-content: center;
+    }
+
+    @at-root #{&}--justify-end {
+        justify-content: flex-end;
+    }
+
+    @at-root #{&}--align-center {
+        align-items: center;
+    }
+}

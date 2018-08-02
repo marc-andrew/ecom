@@ -1,0 +1,45 @@
+/**
+ Icons
+**/
+
+.icon {
+    // Variable for root id: #{$iconParent}
+    $iconParent: &;
+
+    // Default styling
+    display: inline-block;
+    text-indent: -9999px;
+    margin: auto;
+
+    // Start Modifier
+    @at-root #{&}--svg {
+        display: block;
+        width: 100%;
+    }
+
+    @at-root #{&}--height {
+        width: auto;
+        height: 100%;
+    }
+
+    @at-root #{&}--basket-total {
+        position: absolute;
+        background-color: $colorRed;
+        border-radius: px(9);
+        font-family: $font-1;
+        font-size: px(11);
+        line-height: px(10);
+        text-align: center;
+        text-indent: 0;
+        color: #fff;
+        height: px(18);
+        min-width: px(18);
+        padding: px(4) px(5) 0;
+        top: px(-6);
+        right: px(-5);
+
+        @include media(screen,max,767px) {
+            top: px(-1);
+        }
+    }
+}

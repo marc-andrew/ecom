@@ -1,0 +1,37 @@
+/**
+ Transition
+**/
+
+.trans {
+
+    //-------------------------------
+    // Start Modifier
+    @at-root #{&}--all {
+        transition: all 400ms;
+    }
+
+    @at-root #{&}--all-before-after {
+        &:before,
+        &:after {
+            transition: all 400ms;
+        }
+    }
+
+    @at-root #{&}--ease-in-out {
+        transition-timing-function: ease-in-out;
+
+        &:before,
+        &:after {
+            transition-timing-function: ease-in-out;
+        }
+    }
+
+    @at-root #{&}--delay {
+        transition-delay: 100ms;
+
+        &:before,
+        &:after {
+            transition-delay: 100ms;
+        }
+    }
+}

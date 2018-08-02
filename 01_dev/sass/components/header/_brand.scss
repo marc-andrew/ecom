@@ -1,0 +1,41 @@
+/**
+ Brand
+**/
+
+.brand {
+    flex-grow: 1;
+    padding-top: px(3);
+
+    @include media(screen,max,767px) {
+        padding-top: px(7);
+    }
+
+    @include media(screen,max,480px) {
+        padding-top: px(8);
+    }
+
+    .brand__logo {
+        display: block;
+        line-height: 0;
+        max-width: px(270);
+        margin: 0 auto;
+
+        @include media(screen,max,480px) {
+            max-width: px(220);
+        }
+
+        &:focus {
+            outline: px(1) dotted $colorGrey;
+        }
+
+        svg {
+            width: 100%;
+            display: block;
+            
+            polygon,
+            path {
+                fill: $colorRed;
+            }
+        }
+    }
+}
