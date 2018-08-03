@@ -5,8 +5,11 @@
 .img {
     $imgParent: &;
 
-    //-------------------------------
-    // Start Element
+    //
+    //------------------------------- Start Element
+    //
+
+    // Image link
     @at-root #{&}__link {
         display: block;
         width: 100%;
@@ -21,8 +24,10 @@
         }
     }
 
-    //-------------------------------
-    // Start Modifier
+    //
+    //------------------------------- Start Modifier
+    //
+
     @at-root #{&}--wrapper {
         width: 100%;
     }

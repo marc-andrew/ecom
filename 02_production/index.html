@@ -49,8 +49,8 @@
         
         <div class="header-main flex">
             <div class="header-main-left">
-    <nav class="nav nav--header-main" role="navigation">
-        <ul class="nav__header-list flex">
+    <nav class="nav" role="navigation">
+        <ul class="nav__list flex">
             <li class="nav__header-list-item nav--list-item-burger">
                 <!-- Class option:  btn--burger-active -->
                 <button type="button" class="btn btn--burger trans--all-before-after">
@@ -74,18 +74,22 @@
 </div>
 
             <div class="header-main-right flex flex--justify-end">
-    <nav class="nav nav--header-main" role="navigation">
-        <ul class="nav__header-list flex">
+    <nav class="nav" role="navigation">
+        <ul class="nav__list flex">
             <li class="nav__header-list-item nav--list-item-search">
                 <button type="button" class="btn btn--header-icon" title="Search" aria-label="Search">
                     <span class="btn__icon">
-                        <svg class="icon icon--svg icon--height" viewBox="0 0 46 40">
-                            <title class="brand-title">Search</title>
+                        <svg class="icon icon--svg" viewBox="0 0 15 15">
+                            <title class="icon__title">Search</title>
                             <g>
-                                <path d="M26.5,4C35,4,42,11,42,19.5S35,35,26.5,35S11,28,11,19.5S18,4,26.5,4 M26.5,0C15.7,0,7,8.7,7,19.5
-                                        S15.7,39,26.5,39S46,30.3,46,19.5S37.3,0,26.5,0L26.5,0z" />
+                                <g>
+                                    <path d="M8.7,1.4c2.7,0,4.9,2.2,4.9,4.9s-2.2,4.9-4.9,4.9S3.8,9,3.8,6.3S6,1.4,8.7,1.4 M8.7,0C5.2,0,2.4,2.8,2.4,6.3
+                                            s2.8,6.3,6.3,6.3S15,9.8,15,6.3S12.2,0,8.7,0L8.7,0z" />
+                                </g>
+                                <g>
+                                    <polygon points="0.5,14.5 0,13.5 4.4,9.1 5.9,10.6 1.5,15 		" />
+                                </g>
                             </g>
-                            <polygon points="1,36 12.2,27 14.5,30 2,40 " />
                         </svg>
                     </span>
                 </button>
@@ -94,7 +98,7 @@
                 <a href="#" class="btn btn--header-icon">
                     <span class="btn__icon">
                         <svg class="icon icon--svg icon--height" viewBox="0 0 46 50">
-                            <title class="brand-title">Stores</title>
+                            <title class="icon__title">Stores</title>
                             <polygon points="42,30 35.7,30 34.3,34 38.7,34 41.1,46 4.9,46 7.3,34 11.7,34 10.3,30 4,30 0,50 46,50 " />
                             <g>
                                 <g>
@@ -112,7 +116,7 @@
                 <a href="#" class="btn btn--header-icon" aria-label="Login or Register">
                     <span class="btn__icon">
                         <svg class="icon icon--svg" viewBox="0 0 46 42.945">
-                            <title class="brand-title">Profile</title>
+                            <title class="icon__title">Profile</title>
                             <g>
                                 <path class="st0" d="M45.958,42.945l-4-2c0-5.074-1.003-4.934-4.129-5.655l-0.251-0.059c-4.602-1.06-8.955-2.063-10.363-5.151
                                c-0.705-1.548-0.537-3.321,0.498-5.274c3.901-7.367,4.728-13.312,2.39-17.194C28.72,5.316,26.126,4,22.985,4
@@ -130,12 +134,13 @@
             <li class="nav__header-list-item nav--list-item-basket">
                 <a href="#" class="btn btn--header-icon" aria-label="Your Basket">
                     <span class="btn__icon">
-                        <svg class="icon icon--svg icon--height" viewBox="0 0 42 50">
-                            <title class="brand-title">Basket</title>
+                        <svg class="icon icon--svg" viewBox="0 0 22 20">
+                            <title class="icon__title">Basket</title>
+                            <polygon points="7.5,0 7,0.5 7,7.6 8.4,7.6 8.4,1.4 13.6,1.4 13.6,7.6 15,7.6 15,0.5 14.5,0 "/>
                             <g>
-                                <path d="M38,14v32H4V14H38 M42,10H0v40h42V10L42,10z" />
+                                <rect x="9" y="4" width="4" height="2"/>
+                                <polygon points="21,4 16,4 16,6 19.1,6 19.9,18 2.1,18 2.9,6 6,6 6,4 1,4 0,20 22,20 	"/>
                             </g>
-                            <path d="M11.2,10C13,6.4,16.7,4,21,4s8,2.4,9.8,6h4.3C33.1,4.2,27.5,0,21,0S8.9,4.2,6.9,10H11.2z" />
                         </svg>
                     </span>
                     <span class="icon icon--basket-total">4</span>
@@ -147,35 +152,39 @@
         </div>
 
         <div class="header-bottom">
-            <nav class="nav nav--main" role="navigation">
-    <ul class="nav__main-list flex flex--justify-center">
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+            <nav class="nav" role="navigation">
+    <ul class="nav__list flex flex--justify-center">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">New</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">New</span>
             </a>
 
             <div class="nav__sub">
                 <div class="nav__sub-inner flex">
 
                     <div class="nav__sub-col">
-                        <ul class="nav__main-list nav--sub-main-list">
-                            <li class="nav__main-list-item nav--main-list-item-second-level">
+                        <ul class="nav__list nav--list-sub">
+                            <li class="nav__list-item nav--list-item-second-level">
                                 <a href="" class="nav__list-link nav--list-link-second-level nav--list-link-second-level-title trans--all">Clothing</a>
                             </li>
-                            <li class="nav__main-list-item nav--main-list-item-second-level">
+                            <li class="nav__list-item nav--list-item-second-level">
                                 <a href="" class="nav__list-link nav--list-link-second-level trans--all">T-Shirts</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="nav__sub-col">
-                        <ul class="nav__main-list nav--sub-main-list">
-                            <li class="nav__main-list-item nav--main-list-item-second-level">
+                        <ul class="nav__list nav--list-sub">
+                            <li class="nav__list-item nav--list-item-second-level">
                                 <a href="#" class="nav__list-link nav--list-link-second-level nav--list-link-second-level-title trans--all">
                                     Footwear
                                 </a>
                             </li>
-                            <li class="nav__main-list-item nav--main-list-item-second-level">
+                            <li class="nav__list-item nav--list-item-second-level">
                                 <a href="#" class="nav__list-link nav--list-link-second-level trans--all">
                                     Flip Flops
                                 </a>
@@ -200,29 +209,49 @@
                 </div>
             </div>
         </li>
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">Women</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">Women</span>
             </a>
         </li>
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">Men</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">Men</span>
             </a>
         </li>
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">Children</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">Children</span>
             </a>
         </li>
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">Inspiration</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">Inspiration</span>
             </a>
         </li>
-        <li class="nav__main-list-item nav--main-list-item-first-level">
+        <li class="nav__list-item nav--list-item-first-level">
             <a href="#" class="nav__list-link nav--list-link-first-level">
-                <span class="nav__list-link-txt nav--list-link-txt-first-level trans--all-before-after trans--ease-in-out trans--delay">Sale</span>
+                <span class="nav__list-link-txt 
+                            nav--list-link-txt-first-level 
+                            trans--all-before-after 
+                            trans--ease-in-out 
+                            trans--delay">Sale</span>
             </a>
         </li>
     </ul>

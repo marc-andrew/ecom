@@ -3,8 +3,13 @@
 **/
 
 .flex {
+    // Default styling
     display: flex;
     flex-wrap: wrap;
+
+    //
+    //------------------------------- Start Modifier
+    //
 
     @at-root #{&}--justify-center {
         justify-content: center;

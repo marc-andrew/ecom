@@ -8,8 +8,11 @@
 
     position: relative;
 
-    //-------------------------------
-    // Start Element
+    //
+    //------------------------------- Start Element
+    //
+
+    // Navigation header list item
     @at-root #{&}__header-list-item {
         padding: 0 px(5);
 
@@ -18,6 +21,7 @@
         }
     }
 
+    // Navigation list text
     @at-root #{&}__list-txt {
         margin-right: px(3);
         font-size: px(13);
@@ -67,8 +71,10 @@
         text-transform: uppercase;
     }
 
-    //-------------------------------
-    // Start Modifier
+    //
+    //------------------------------- Start Modifier
+    //
+
     @at-root #{&}--list-item-country {
         padding: px(5) 0 0;
 
@@ -126,7 +132,7 @@
         display: block;
         outline: none;
         font-family: $font-2;
-        font-size: px(12);
+        font-size: px(13);
         font-weight: 500;
         letter-spacing: px(0.5);
         text-transform: uppercase;
@@ -161,7 +167,7 @@
         }
     }
 
-    @at-root #{&}--main-list-item-first-level {
+    @at-root #{&}--list-item-first-level {
         
         &:last-child {
 
@@ -183,7 +189,7 @@
     @at-root #{&}--list-link-second-level {
         display: inline-block;
         border-bottom: px(1) solid transparent;
-        font-size: px(15);
+        font-size: px(13);
         line-height: px(16);
         letter-spacing: px(0.5);
         padding: px(2) 0 0;
@@ -200,19 +206,20 @@
 
     @at-root #{&}--list-link-second-level-title {
         font-family: $font-2;
-        font-size: px(12);
-        line-height: px(13);
+        font-size: px(13);
+        font-weight: 500;
+        line-height: px(16);
         text-transform: uppercase;
         letter-spacing: px(1.5);
     }
 
-    @at-root #{&}--main-list-item-second-level {
+    @at-root #{&}--list-item-second-level {
         padding: px(3) 0;
     }
 
-    @at-root #{&}--sub-main-list {
+    @at-root #{&}--sub-list {
 
-        & + #{$navParent}--sub-main-list {
+        & + #{$navParent}--sub-list {
             margin-top: px(25);
         }
     }

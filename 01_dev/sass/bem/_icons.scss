@@ -11,7 +11,11 @@
     text-indent: -9999px;
     margin: auto;
 
-    // Start Modifier
+    //
+    //------------------------------- Start Modifier
+    //
+
+    // Modifier for svg elements
     @at-root #{&}--svg {
         display: block;
         width: 100%;
@@ -22,6 +26,7 @@
         height: 100%;
     }
 
+    // Modifier for basket total icon
     @at-root #{&}--basket-total {
         position: absolute;
         background-color: $colorRed;

@@ -26,8 +26,11 @@
         outline: px(1) dotted $colorGreyDark;
     }
 
-    //-------------------------------
-    // Start Element
+    //
+    //------------------------------- Start Element
+    //
+    
+    // Default btn icon element
     @at-root #{&}__icon {
         position: absolute;
         display: block;
@@ -40,6 +43,7 @@
         margin: auto;
     }
 
+    // Burger btn icon element
     @at-root #{&}__burger-icon {
         position: absolute;
         display: block;
@@ -67,8 +71,11 @@
         }
     }
 
-    //-------------------------------
-    // Start Modifier
+    //
+    //------------------------------- Start Modifier
+    //
+    
+    // Default header icon modifier
     @at-root #{&}--header-icon {
         position: relative;
         display: block;
@@ -84,10 +91,12 @@
         }
 
         .icon--height {
+            width: auto;
             height: px(20);
         }
     }
 
+    // Burger icon modifier
     @at-root #{&}--burger {
         display: block;
         width: px(30);
@@ -115,6 +124,7 @@
         }
     }
 
+    // Burger icon modifier when active
     @at-root #{&}--burger-active {
 
         &:before,

@@ -4,8 +4,10 @@
 
 .trans {
 
-    //-------------------------------
-    // Start Modifier
+    //
+    //------------------------------- Start Modifier
+    //
+
     @at-root #{&}--all {
         transition: all 400ms;
     }
