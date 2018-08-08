@@ -77,22 +77,12 @@
     
     // Default header icon modifier
     @at-root #{&}--header-icon {
-        position: relative;
         display: block;
         width: px(30);
         height: px(20);
 
         @include media(screen,max,767px) {
             height: px(30);
-        }
-
-        .icon--svg {
-            width: px(20);
-        }
-
-        .icon--height {
-            width: auto;
-            height: px(20);
         }
     }
 

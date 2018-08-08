@@ -21,6 +21,10 @@
         width: 100%;
     }
 
+    @at-root #{&}--header {
+        width: px(20);
+    }
+
     @at-root #{&}--height {
         width: auto;
         height: 100%;

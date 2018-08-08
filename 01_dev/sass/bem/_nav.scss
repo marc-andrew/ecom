@@ -12,7 +12,7 @@
     //------------------------------- Start Element
     //
 
-    // Navigation header list item
+    //-- ELEMENT: Navigation header list item
     @at-root #{&}__header-list-item {
         padding: 0 px(5);
 
@@ -20,100 +20,29 @@
             padding: 0;
         }
     }
-
-    // Navigation list text
-    @at-root #{&}__list-txt {
+    // ELEMENT: Navigation list text
+    @at-root #{&}__header-list-txt {
         margin-right: px(3);
         font-size: px(13);
         line-height: px(14);
     }
-
-    // Main Navigation
+    //-- ELEMENT: Navigation List Link
+    @at-root #{&}__list-link {
+        position: relative;
+        display: block;
+        outline: none;
+        font-family: $font-2;
+        font-size: px(13);
+        letter-spacing: px(0.5);
+    }
+    //-- ELEMENT: Navigation List Link Text
     @at-root #{&}__list-link-txt {
+        position: relative;
         display: block;
         height: 100%;
-    }
 
-    @at-root #{&}__sub {
-        position: absolute;
-        background-color: $colorGreyLight;
-        width: 100%;
-        top: px(40);
-        left: 0;
-        padding: px(30) px(5);
-    }
-
-    @at-root #{&}__sub-inner {
-        max-width: px(1300);
-        margin: 0 auto;
-    }
-
-    @at-root #{&}__sub-col {
-        width: 25%;
-        padding: 0 px(10);
-    }
-
-    @at-root #{&}__content-col {
-        width: 50%;
-        padding: 0 px(10);
-    }
-
-    @at-root #{&}__content-main {
-        padding: px(10) 0 0;
-    }
-
-    @at-root #{&}__content-title {
-        display: block;
-        font-family: $font-2;
-        font-size: px(14);
-        line-height: px(20);
-        letter-spacing: px(1.5);
-        text-transform: uppercase;
-    }
-
-    //
-    //------------------------------- Start Modifier
-    //
-
-    @at-root #{&}--list-item-country {
-        padding: px(5) 0 0;
-
-        @include media(screen,max,767px) {
-            display: none;
-        }
-    }
-
-    @at-root #{&}--list-item-burger {
-        display: none;
-
-        @include media(screen,max,767px) {
-            display: block;
-            padding: 0;
-        }
-    }
-
-    @at-root #{&}--list-item-search {
-        @include media(screen,max,480px) {
-            display: none;
-        }
-    }
-
-    @at-root #{&}--list-item-account {
-        @include media(screen,max,767px) {
-            display: none;
-        }
-    }
-
-    @at-root #{&}--list-item-stores {
-        @include media(screen,max,767px) {
-            display: none;
-        }
-    }
-
-    // Main Navigation
-    @at-root #{&}--list-link-txt-first-level {
-        position: relative;
-
+        // Line below the text with 0% width
+        // Width changes to 100% by hover or focus
         &:after {
             position: absolute;
             width: 0%;
@@ -126,15 +55,82 @@
             margin: 0 auto;
         }
     }
-
-    @at-root #{&}--list-link-first-level {
-        position: relative;
+    //-- ELEMENT: Sub navigation
+    @at-root #{&}__sub {
+        position: absolute;
+        background-color: $colorGreyLight;
+        width: 100%;
+        top: px(40);
+        left: 0;
+        padding: px(30) px(5);
+    }
+    //-- ELEMENT: Sub navigation inner
+    @at-root #{&}__sub-inner {
+        max-width: px(1300);
+        margin: 0 auto;
+    }
+    //-- ELEMENT: Sub navigation col
+    @at-root #{&}__sub-col {
+        width: 25%;
+        padding: 0 px(10);
+    }
+    //-- ELEMENT: Sub navigation
+    @at-root #{&}__content-main {
+        padding: px(10) 0 0;
+    }
+    //-- ELEMENT: Content Title for the sub navigation
+    @at-root #{&}__content-title {
         display: block;
-        outline: none;
         font-family: $font-2;
         font-size: px(13);
         font-weight: 500;
-        letter-spacing: px(0.5);
+        line-height: px(16);
+        letter-spacing: px(1.5);
+        text-transform: uppercase;
+    }
+
+    //
+    //------------------------------- Start Modifier
+    //
+    
+    //-- Modifier for nav__header-list-item
+    @at-root #{&}--list-item-country {
+        padding: px(5) 0 0;
+
+        @include media(screen,max,767px) {
+            display: none;
+        }
+    }
+    //-- Modifier for nav__header-list-item
+    @at-root #{&}--list-item-burger {
+        display: none;
+
+        @include media(screen,max,767px) {
+            display: block;
+            padding: 0;
+        }
+    }
+    //-- Modifier for nav__header-list-item
+    @at-root #{&}--list-item-search {
+        @include media(screen,max,480px) {
+            display: none;
+        }
+    }
+    //-- Modifier for nav__header-list-item
+    @at-root #{&}--list-item-account {
+        @include media(screen,max,767px) {
+            display: none;
+        }
+    }
+    //-- Modifier for nav__header-list-item
+    @at-root #{&}--list-item-stores {
+        @include media(screen,max,767px) {
+            display: none;
+        }
+    }
+    //-- Modifier for nav__list-link
+    @at-root #{&}--list-link-first-level {
+        font-weight: 500;
         text-transform: uppercase;
         height: px(40);
         padding: px(14) px(15) 0;
@@ -154,8 +150,7 @@
         &:hover,
         &:focus {
 
-            #{$navParent}--list-link-txt-first-level {
-
+            #{$navParent}__list-link-txt {
                 &:after {
                     width: 100%;
                 }
@@ -166,7 +161,34 @@
             outline: px(1) dotted $colorGrey;
         }
     }
+    //-- Modifier for nav__list-link
+    @at-root #{&}--list-link-second-level {
+        display: inline-block;
+        border-bottom: px(1) solid transparent;
+        font-size: px(13);
+        line-height: px(16);
+        letter-spacing: px(0.5);
+        padding: px(2) 0 0;
 
+        &:hover,
+        &:focus {
+            border-color: $colorBlack;
+        }
+
+        &:focus {
+            outline: px(1) dotted $colorGrey;
+        }
+    }
+    //-- Modifier for nav__list-link
+    @at-root #{&}--list-link-second-level-title {
+        font-family: $font-2;
+        font-size: px(13);
+        font-weight: 500;
+        line-height: px(16);
+        text-transform: uppercase;
+        letter-spacing: px(1.5);
+    }
+    //-- Modifier for nav__list-link
     @at-root #{&}--list-item-first-level {
         
         &:last-child {
@@ -179,48 +201,8 @@
             }
         }
     }
-
-    // Sub Navigation
-    @at-root #{&}--sub-col-big {
-        width: 50%;
-        padding: 0;
-    }
-
-    @at-root #{&}--list-link-second-level {
-        display: inline-block;
-        border-bottom: px(1) solid transparent;
-        font-size: px(13);
-        line-height: px(16);
-        letter-spacing: px(0.5);
-        padding: px(2) 0 0;
-
-        &:hover,
-        &:focus {
-            border-color: $colorRed;
-        }
-
-        &:focus {
-            outline: px(1) dotted $colorGrey;
-        }
-    }
-
-    @at-root #{&}--list-link-second-level-title {
-        font-family: $font-2;
-        font-size: px(13);
-        font-weight: 500;
-        line-height: px(16);
-        text-transform: uppercase;
-        letter-spacing: px(1.5);
-    }
-
+    //-- Modifier for nav__list-item
     @at-root #{&}--list-item-second-level {
         padding: px(3) 0;
-    }
-
-    @at-root #{&}--sub-list {
-
-        & + #{$navParent}--sub-list {
-            margin-top: px(25);
-        }
-    }
+    }   
 }
