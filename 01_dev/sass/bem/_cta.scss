@@ -35,23 +35,20 @@
     //------------------------------- Start Modifier
     //
 
-    // Change cta font size to small
+    //-- MODIFIER: Change cta font size to small
     @at-root #{&}--small {
         font-size: px(11);
         line-height: px(16);
     }
-
-    // Change cta text to uppercase
+    //-- MODIFIER: Change cta text to uppercase
     @at-root #{&}--caps {
         text-transform: uppercase;
     }
-
-    // Change cta text to bold
+    //-- MODIFIER: Change cta text to bold
     @at-root #{&}--bold {
         font-weight: 600;
     }
-
-    // Change cta colour to white
+    //-- MODIFIER: Change cta colour to white
     @at-root #{&}--white {
         color: #fff;
 

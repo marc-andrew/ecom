@@ -15,22 +15,21 @@
     //------------------------------- Start Modifier
     //
 
-    // Modifier for svg elements
+    //-- MODIFIER: SVG elements
     @at-root #{&}--svg {
         display: block;
         width: 100%;
     }
-
+    //-- MODIFIER: Icons in the Header
     @at-root #{&}--header {
         width: px(20);
     }
-
+    //-- MODIFIER: Change from 100% width to auto and auto height to 100%
     @at-root #{&}--height {
         width: auto;
         height: 100%;
     }
-
-    // Modifier for basket total icon
+    //-- MODIFIER: Basket Total Icon
     @at-root #{&}--basket-total {
         position: absolute;
         background-color: $colorRed;

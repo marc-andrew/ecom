@@ -20,7 +20,7 @@
             padding: 0;
         }
     }
-    // ELEMENT: Navigation list text
+    //-- ELEMENT: Navigation list text
     @at-root #{&}__header-list-txt {
         margin-right: px(3);
         font-size: px(13);
@@ -57,8 +57,9 @@
     }
     //-- ELEMENT: Sub navigation
     @at-root #{&}__sub {
+        display: none;
         position: absolute;
-        background-color: $colorGreyLight;
+        background-color: #fff;
         width: 100%;
         top: px(40);
         left: 0;
@@ -74,7 +75,11 @@
         width: 25%;
         padding: 0 px(10);
     }
-    //-- ELEMENT: Sub navigation
+    //-- ELEMENT: Sub navigation content
+    @at-root #{&}__content {
+        width: 100%;
+    }
+    //-- ELEMENT: Sub navigation content main
     @at-root #{&}__content-main {
         padding: px(10) 0 0;
     }
@@ -92,8 +97,33 @@
     //
     //------------------------------- Start Modifier
     //
-    
-    //-- Modifier for nav__header-list-item
+
+    //-- MODIFIER: for nav
+    @at-root #{&}--primary {
+        @include media(screen,max,767px) {
+            position: fixed;
+            background-color: $colorGreyLight;
+            top: px(85);
+            left: 0;
+            width: 100%;
+            height: calc(100% - 85px);
+        }
+    }
+    //-- MODIFIER: for nav__list
+    @at-root #{&}--list-main {
+        @include media(screen,max,767px) {
+            background-color: #fff;
+        }
+    }
+    //-- MODIFIER: for nav__list
+    @at-root #{&}--list-additional {
+        display: none;
+
+        @include media(screen,max,767px) {
+            display: block;
+        }
+    }
+    //-- MODIFIER: for nav__header-list-item
     @at-root #{&}--list-item-country {
         padding: px(5) 0 0;
 
@@ -101,7 +131,7 @@
             display: none;
         }
     }
-    //-- Modifier for nav__header-list-item
+    //-- MODIFIER: for nav__header-list-item
     @at-root #{&}--list-item-burger {
         display: none;
 
@@ -110,25 +140,25 @@
             padding: 0;
         }
     }
-    //-- Modifier for nav__header-list-item
+    //-- MODIFIER: for nav__header-list-item
     @at-root #{&}--list-item-search {
         @include media(screen,max,480px) {
             display: none;
         }
     }
-    //-- Modifier for nav__header-list-item
+    //-- MODIFIER: for nav__header-list-item
     @at-root #{&}--list-item-account {
         @include media(screen,max,767px) {
             display: none;
         }
     }
-    //-- Modifier for nav__header-list-item
+    //-- MODIFIER: for nav__header-list-item
     @at-root #{&}--list-item-stores {
         @include media(screen,max,767px) {
             display: none;
         }
     }
-    //-- Modifier for nav__list-link
+    //-- MODIFIER: for nav__list-link
     @at-root #{&}--list-link-first-level {
         font-weight: 500;
         text-transform: uppercase;
@@ -145,6 +175,10 @@
             height: px(13);
             top: px(13);
             right: 0;
+
+            @include media(screen,max,767px) {
+                content: normal;
+            }
         }
 
         &:hover,
@@ -161,7 +195,7 @@
             outline: px(1) dotted $colorGrey;
         }
     }
-    //-- Modifier for nav__list-link
+    //-- MODIFIER: for nav__list-link
     @at-root #{&}--list-link-second-level {
         display: inline-block;
         border-bottom: px(1) solid transparent;
@@ -179,7 +213,7 @@
             outline: px(1) dotted $colorGrey;
         }
     }
-    //-- Modifier for nav__list-link
+    //-- MODIFIER: for nav__list-link
     @at-root #{&}--list-link-second-level-title {
         font-family: $font-2;
         font-size: px(13);
@@ -188,8 +222,11 @@
         text-transform: uppercase;
         letter-spacing: px(1.5);
     }
-    //-- Modifier for nav__list-link
+    //-- MODIFIER: for nav__list-link
     @at-root #{&}--list-item-first-level {
+        @include media(screen,max,767px) {
+            width: 100%;
+        }
         
         &:last-child {
 
@@ -201,7 +238,7 @@
             }
         }
     }
-    //-- Modifier for nav__list-item
+    //-- MODIFIER: for nav__list-item
     @at-root #{&}--list-item-second-level {
         padding: px(3) 0;
     }   

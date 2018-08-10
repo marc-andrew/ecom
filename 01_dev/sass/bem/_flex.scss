@@ -11,14 +11,15 @@
     //------------------------------- Start Modifier
     //
 
+    //-- MODIFIER: Justify Content to Center
     @at-root #{&}--justify-center {
         justify-content: center;
     }
-
+    //-- MODIFIER: Justify Content to End
     @at-root #{&}--justify-end {
         justify-content: flex-end;
     }
-
+    //-- MODIFIER: Align Items to Center
     @at-root #{&}--align-center {
         align-items: center;
     }

@@ -9,7 +9,7 @@
     //------------------------------- Start Element
     //
 
-    // Image link
+    //-- ELEMENT: Image link
     @at-root #{&}__link {
         display: block;
         width: 100%;
@@ -28,6 +28,7 @@
     //------------------------------- Start Modifier
     //
 
+    //-- MODIFIER: Image Wrapper
     @at-root #{&}--wrapper {
         width: 100%;
     }

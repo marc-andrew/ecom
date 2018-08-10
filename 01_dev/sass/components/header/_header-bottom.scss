@@ -1,0 +1,9 @@
+/**
+ Header Bottom
+**/
+
+.header-bottom {
+    @include media(screen,max,767px) {
+        overflow: hidden;
+    }
+}

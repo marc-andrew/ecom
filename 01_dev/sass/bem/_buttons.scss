@@ -30,7 +30,7 @@
     //------------------------------- Start Element
     //
     
-    // Default btn icon element
+    //-- ELEMENT: Default btn icon element
     @at-root #{&}__icon {
         position: absolute;
         display: block;
@@ -42,8 +42,7 @@
         left: 0;
         margin: auto;
     }
-
-    // Burger btn icon element
+    //-- ELEMENT: Burger btn icon element
     @at-root #{&}__burger-icon {
         position: absolute;
         display: block;
@@ -75,7 +74,7 @@
     //------------------------------- Start Modifier
     //
     
-    // Default header icon modifier
+    //-- MODIFIER: Default header icon modifier
     @at-root #{&}--header-icon {
         display: block;
         width: px(30);
@@ -85,8 +84,7 @@
             height: px(30);
         }
     }
-
-    // Burger icon modifier
+    //-- MODIFIER: Burger icon modifier
     @at-root #{&}--burger {
         display: block;
         width: px(30);
@@ -113,8 +111,7 @@
             bottom: px(7);
         }
     }
-
-    // Burger icon modifier when active
+    //-- MODIFIER: Burger icon modifier when active
     @at-root #{&}--burger-active {
 
         &:before,

@@ -3,22 +3,25 @@
 **/
 
 .trans {
+    // Variable for root id: #{$transParent}
+    $transParent: &;
 
     //
     //------------------------------- Start Modifier
     //
 
+    //-- MODIFIER: Transition All
     @at-root #{&}--all {
         transition: all 400ms;
     }
-
+    //-- MODIFIER: Transition All for Before and After pseudo class
     @at-root #{&}--all-before-after {
         &:before,
         &:after {
             transition: all 400ms;
         }
     }
-
+    //-- MODIFIER: Change Transition Timing
     @at-root #{&}--ease-in-out {
         transition-timing-function: ease-in-out;
 
@@ -27,7 +30,7 @@
             transition-timing-function: ease-in-out;
         }
     }
-
+    //-- MODIFIER: Add Transition Delay
     @at-root #{&}--delay {
         transition-delay: 100ms;
 
