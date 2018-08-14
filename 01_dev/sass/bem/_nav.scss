@@ -47,24 +47,7 @@
     }
     //-- ELEMENT: Primary Navigation sub navigation
     @at-root #{&}__sub {
-        // display: none;
-        position: absolute;
         background-color: #fff;
-        width: 100%;
-        top: px(40);
-        left: 0;
-        padding: px(30) px(5);
-
-        @include media(screen,max,767px) {
-            position: fixed;
-            background-color: #fff;
-            top: px(85);
-            left: 0;
-            width: 100%;
-            height: calc(100% - 85px);
-            padding: 0;
-            z-index: 2;
-        }
     }
     //-- ELEMENT: Primary Navigation sub navigation inner
     @at-root #{&}__sub-inner {
@@ -222,8 +205,69 @@
             }
         }
     }
+    //-- MODIFIER: Primary Navigation for nav__sub
+    @at-root #{&}--sub-second-level {
+        // display: none;
+        position: absolute;
+        width: 100%;
+        top: px(40);
+        left: 0;
+        padding: px(30) px(5);
+
+        @include media(screen,max,767px) {
+            position: fixed;
+            top: px(85);
+            left: 0;
+            width: 100%;
+            height: calc(100% - 85px);
+            padding: 0;
+            z-index: 2;
+        }
+    }
+    //-- MODIFIER: Primary Navigation for nav__list-link
+    @at-root #{&}--list-link-second-level {
+        display: inline-block;
+        border-bottom: px(1) solid transparent;
+        font-family: $font-2;
+        font-size: px(13);
+        font-weight: 500;
+        line-height: px(16);
+        letter-spacing: px(1.5);
+        text-transform: uppercase;
+        padding: px(2) 0 0;
+
+        &:hover,
+        &:focus {
+            border-color: $colorBlack;
+        }
+
+        &:focus {
+            outline: px(1) dotted $colorGrey;
+        }
+
+        @include media(screen,max,767px) {
+            display: block;
+            border-bottom: none;
+            height: px(40);
+            padding: px(14) px(15) 0;
+        }
+    }
+    //-- MODIFIER: Primary Navigation for nav__sub
+    @at-root #{&}--sub-third-level {
+        padding: px(2) 0 0;
+
+        @include media(screen,max,767px) {
+            position: fixed;
+            top: px(85);
+            left: 0;
+            width: 100%;
+            height: calc(100% - 85px);
+            padding: 0;
+            z-index: 2;
+        }
+    }
     //-- MODIFIER: Primary Navigation for nav__list-item
-    @at-root #{&}--list-item-second-level {
+    @at-root #{&}--list-item-third-level {
         padding: px(3) 0;
 
         @include media(screen,max,767px) {
@@ -231,7 +275,7 @@
         }
     }
     //-- MODIFIER: Primary Navigation for nav__list-link
-    @at-root #{&}--list-link-second-level {
+    @at-root #{&}--list-link-third-level {
         display: inline-block;
         border-bottom: px(1) solid transparent;
         font-size: px(13);
@@ -247,15 +291,13 @@
         &:focus {
             outline: px(1) dotted $colorGrey;
         }
-    }
-    //-- MODIFIER: Primary Navigation for nav__list-link
-    @at-root #{&}--list-link-second-level-title {
-        font-family: $font-2;
-        font-size: px(13);
-        font-weight: 500;
-        line-height: px(16);
-        text-transform: uppercase;
-        letter-spacing: px(1.5);
+
+        @include media(screen,max,767px) {
+            display: block;
+            border-bottom: none;
+            height: px(40);
+            padding: px(14) px(15) 0;
+        }
     }
     //-- MODIFIER: Header Main Navigation for nav__header-list-item
     @at-root #{&}--list-item-country {
