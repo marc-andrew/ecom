@@ -48,15 +48,6 @@
     //-- ELEMENT: Primary Navigation sub navigation
     @at-root #{&}__sub {
         background-color: #fff;
-
-        @include media(screen,max,767px) {
-            position: fixed;
-            top: px(85);
-            left: 0;
-            height: calc(100% - 85px);
-            transform: translateX(-99%);
-            z-index: 2;
-        }
     }
     //-- ELEMENT: Primary Navigation sub navigation inner
     @at-root #{&}__sub-inner {
@@ -226,7 +217,11 @@
         @include media(screen,max,767px) {
             position: fixed;
             top: px(85);
+            left: 0;
+            height: calc(100% - 85px);
+            transform: translateX(-100%);
             padding: 0;
+            z-index: 2;
         }
     }
     //-- MODIFIER: Primary Navigation for nav__list-link
@@ -263,8 +258,18 @@
         padding: px(2) 0 0;
 
         @include media(screen,max,767px) {
+            position: fixed;
+            top: px(85);
+            left: 0;
+            height: calc(100% - 85px);
+            transform: translateX(100%);
             padding: 0;
+            z-index: 2;
         }
+    }
+    //-- MODIFIER: Primary Navigation for nav__sub
+    @at-root #{&}--sub-open {
+        transform: translateX(0%);
     }
     //-- MODIFIER: Primary Navigation for nav__list-item
     @at-root #{&}--list-item-third-level {

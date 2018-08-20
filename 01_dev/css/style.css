@@ -499,16 +499,6 @@ li {
 .nav__sub {
   background-color: #fff;
 }
-@media screen and (max-width: 767px) {
-  .nav__sub {
-    position: fixed;
-    top: 5.3125rem;
-    left: 0;
-    height: calc(100% - 85px);
-    transform: translateX(-99%);
-    z-index: 2;
-  }
-}
 .nav__sub-inner {
   max-width: 65.25rem;
   margin: 0 auto;
@@ -646,7 +636,11 @@ li {
   .nav--sub-second-level {
     position: fixed;
     top: 5.3125rem;
+    left: 0;
+    height: calc(100% - 85px);
+    transform: translateX(-100%);
     padding: 0;
+    z-index: 2;
   }
 }
 .nav--list-link-second-level {
@@ -680,8 +674,17 @@ li {
 }
 @media screen and (max-width: 767px) {
   .nav--sub-third-level {
+    position: fixed;
+    top: 5.3125rem;
+    left: 0;
+    height: calc(100% - 85px);
+    transform: translateX(100%);
     padding: 0;
+    z-index: 2;
   }
+}
+.nav--sub-open {
+  transform: translateX(0%);
 }
 .nav--list-item-third-level {
   padding: 0.1875rem 0;
