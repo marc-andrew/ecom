@@ -115,7 +115,13 @@
             left: 0;
             width: 100%;
             height: calc(100% - 85px);
+            transform: translateX(-100%);
             overflow-y: auto;
+        }
+    }
+    @at-root #{&}--primary-open {
+        @include media(screen,max,767px) {
+            transform: translateX(0%);
         }
     }
     //-- MODIFIER: Primary Navigation for nav__list
@@ -216,11 +222,12 @@
 
         @include media(screen,max,767px) {
             position: fixed;
-            top: px(85);
+            top: 0;
             left: 0;
-            height: calc(100% - 85px);
-            transform: translateX(-100%);
+            height: 100%;
             padding: 0;
+            transform: translateX(-100%);
+            overflow-y: auto;
             z-index: 2;
         }
     }
@@ -259,11 +266,12 @@
 
         @include media(screen,max,767px) {
             position: fixed;
-            top: px(85);
+            top: 0;
             left: 0;
-            height: calc(100% - 85px);
-            transform: translateX(100%);
+            height: 100%;
             padding: 0;
+            transform: translateX(200%);
+            overflow-y: auto;
             z-index: 2;
         }
     }
