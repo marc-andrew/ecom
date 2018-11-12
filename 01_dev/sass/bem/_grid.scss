@@ -1,0 +1,67 @@
+/**
+ Grid Sytem
+**/
+
+.gs {
+    width: 100%;
+    padding: 0 px(10);
+
+    @include media(screen,max,1023px) {
+        padding-right: px(6);
+        padding-left: px(6);
+    }
+    @include media(screen,max,667px) {
+        padding-right: px(5);
+        padding-left: px(5);
+    }
+
+    //
+    //------------------------------- Start Modifier
+    //
+    @at-root #{&}--col-3 {
+        width: column(3, 12);
+    }
+    @at-root #{&}--col-4 {
+        width: column(4, 12);
+    }
+    @at-root #{&}--col-6 {
+        width: column(6, 12);
+    }
+    @at-root #{&}--col-7 {
+        width: column(7, 12);
+    }
+    @at-root #{&}--col-8 {
+        width: column(8, 12);
+    }
+    @at-root #{&}--col-9 {
+        width: column(9, 12);
+    }
+
+    // Table
+    @at-root #{&}--col-6-m {
+        @include media(screen,max,1023px) {
+            width: column(6, 12);
+        }
+    }
+    @at-root #{&}--col-12-m {
+        @include media(screen,max,1023px) {
+            width: 100%;
+        }
+    }
+
+    // Mobile
+    @at-root #{&}--col-1-s {
+        @include media(screen,max,667px) {
+            width: 50%;
+        }
+    }
+    @at-root #{&}--col-2-s {
+        @include media(screen,max,667px) {
+            width: 100%;
+        }
+    }
+
+    @at-root #{&}--col-no-paddings {
+        padding: 0;
+    }
+}

@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                 src: [".sass-cache"]
             },
             release: {
-                src: [".sass-cache", "02_production/css/style.css.map"]
+                src: [".sass-cache"]
             }
         },
 
@@ -37,6 +37,20 @@ module.exports = function (grunt) {
             }
         },
 
+        'dart-sass': {
+            target: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '01_dev/sass/',
+                        src: ['**/*.scss'],
+                        dest: '02_production/css/',
+                        ext: '.css'
+                    }
+                ]
+            }
+        },
+
         autoprefixer: {
             options: {
                 browsers: ['last 2 versions', 'ie 9']
@@ -44,7 +58,7 @@ module.exports = function (grunt) {
             multiple_files: {
                 expand: true,
                 flatten: true,
-                src: '01_dev/css/*.css',
+                src: '02_production/css/*.css',
                 dest: '02_production/css/'
             },
         },
@@ -100,16 +114,6 @@ module.exports = function (grunt) {
                         dest: '02_production/js'
                     }
                 ],
-            },
-            cssmap: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '01_dev/css',
-                        src: '*.css.map',
-                        dest: '02_production/css'
-                    }
-                ],
             }
         },
 
@@ -152,11 +156,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: '01_dev/sass/**/*',
-                tasks: ['sass', 'copy:cssmap'],
-            },
-            css: {
-                files: '01_dev/css/**/*',
-                tasks: ['autoprefixer'],
+                tasks: ['dart-sass', 'autoprefixer'],
                 options: {
                     livereload: true,
                 }
@@ -190,9 +190,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-dart-sass');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('dev', ['connect', 'sass', 'autoprefixer', 'copy:cssmap', 'jshint', 'copy:js', 'processhtml', 'clean:build', 'watch']); // use 'grunt dev' for development
-    grunt.registerTask('prod', ['connect', 'sass', 'autoprefixer', 'copy:js', 'uglify', 'cssmin', 'processhtml', 'replace', 'htmlmin', 'clean:release', 'watch']); // use 'grunt prod' for development
+    grunt.registerTask('dev', ['connect', 'dart-sass', 'autoprefixer', 'jshint', 'copy:js', 'processhtml', 'clean:build', 'watch']); // use 'grunt dev' for development
+    grunt.registerTask('prod', ['connect', 'dart-sass', 'autoprefixer', 'copy:js', 'uglify', 'cssmin', 'processhtml', 'replace', 'htmlmin', 'clean:release', 'watch']); // use 'grunt prod' for development
     grunt.registerTask('checkjs', ['jshint']);
 };
